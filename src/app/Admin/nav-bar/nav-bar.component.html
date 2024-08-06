@@ -1,0 +1,56 @@
+<nav class="navbar   navbar-expand-md fixed-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+        <ul class="navbar-nav  mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link "  href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="parametrageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Paramétrage
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="parametrageDropdown">
+              <li><a class="dropdown-item" aria-current="page" routerLink="/Admin/Produit">Produit</a></li>
+              <li><a class="dropdown-item" routerLink="/Admin/Type">Type</a></li>
+              <li><a class="dropdown-item" routerLink="/Admin/Famille">Famille</a></li>
+              <li><a class="dropdown-item" routerLink="/Admin/Groupe">Groupe</a></li>
+              <li><a class="dropdown-item" routerLink="/Admin/User">Utilisateurs</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="ventesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Ventes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="ventesDropdown">
+              <li><a class="dropdown-item" routerLink="/Admin/AllCommandes">Commandes</a></li>
+              <li><a class="dropdown-item" routerLink="/Admin/AllType">Factures</a></li>
+              <li><a class="dropdown-item" routerLink="/Admin/clients">Clients</a></li>
+              <li><a class="dropdown-item" routerLink="/Admin/listproductpromo">Produit en promo</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Customers</a>
+          </li>
+        </ul>
+        <div class="dropdown">
+          <a class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>User</strong>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
