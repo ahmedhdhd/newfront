@@ -24,7 +24,7 @@ export class ListFamilleComponent {
   }
 
   getFamilles(): void {
-    this.Familleservice.getFamilles().subscribe({
+    this.Familleservice.getall().subscribe({
       next: (response) => {
         console.log(response)
         this.familles = response;
@@ -56,7 +56,7 @@ export class ListFamilleComponent {
   }
 
   deleteFamille(id: number) {
-    this.Familleservice.deleteFamille(id).subscribe({
+    this.Familleservice.delete(id).subscribe({
       next: () => {
         this.getFamilles(); 
       },

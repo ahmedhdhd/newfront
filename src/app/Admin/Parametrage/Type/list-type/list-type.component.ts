@@ -25,7 +25,7 @@ export class ListTypeComponent implements OnInit {
   }
 
   getTypes() {
-    this.typeservice.getTypes().subscribe({
+    this.typeservice.getall().subscribe({
       next: (response) => {
         this.types = response;
         this.onSearchChanges();
@@ -56,7 +56,7 @@ export class ListTypeComponent implements OnInit {
   }
 
   deleteType(id: number) {
-    this.typeservice.deleteType(id).subscribe({
+    this.typeservice.delete(id).subscribe({
       next: () => {
         this.ngOnInit(); 
       },

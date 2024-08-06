@@ -48,17 +48,19 @@ export class AddEditFamilleComponent implements OnInit {
 
   loadFamilleData(): void {
     if (this.id) {
+
       this.familleService.getFamilleById(this.id).subscribe(famille => {
         this.familleForm.patchValue({
           name: famille.name,
           groupID: famille.groupId
         });
       });
+      
     }
   }
 
   loadGroups(): void {
-    this.groupservice.getGroups().subscribe(groups => {
+    this.groupservice.getall().subscribe(groups => {
       this.groups = groups;
     });
   }
@@ -68,12 +70,12 @@ export class AddEditFamilleComponent implements OnInit {
       const familleData = this.familleForm.value;
       console.log(familleData)
       if (this.isEdit && this.id) {
-        this.familleService.updateFamille(this.id, familleData).subscribe(
+        this.familleService.update(this.id, familleData).subscribe(
           () => this.router.navigate(['/Admin/Famille']),
           error => console.error('Error updating famille', error)
         );
       } else {
-        this.familleService.addFamille(familleData).subscribe(
+        this.familleService.add(familleData).subscribe(
           () => this.router.navigate(['/Admin/Famille']),
           error => console.error('Error adding famille', error)
         );

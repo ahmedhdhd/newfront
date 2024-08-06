@@ -11,11 +11,13 @@ import { AddEditUtilisateurComponent } from "./Admin/Parametrage/Utilisateur/add
 import { ListProduitComponent } from "./Admin/Stock/GestionArticle/list-produit/list-produit.component";
 import { AddEditProduitComponent } from "./Admin/Stock/GestionArticle/add-edit-produit/add-edit-produit.component";
 import { DashbordComponent } from "./Admin/dashbord/dashbord.component";
+import { UserLoginComponent } from "./Admin/Login/user-login/user-login.component";
+import { AcceuilComponent } from "./Commercial/Acceuil/acceuil/acceuil.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ListGroupeComponent, AddEditGroupeComponent, AddEditFamilleComponent, ListFamilleComponent, AddEditTypeComponent, ListTypeComponent, ListUtilisateurComponent, AddEditUtilisateurComponent, ListProduitComponent, AddEditProduitComponent, DashbordComponent],
+  imports: [RouterOutlet, ListGroupeComponent, AddEditGroupeComponent, AddEditFamilleComponent, ListFamilleComponent, AddEditTypeComponent, ListTypeComponent, ListUtilisateurComponent, AddEditUtilisateurComponent, ListProduitComponent, AddEditProduitComponent, DashbordComponent, UserLoginComponent, AcceuilComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

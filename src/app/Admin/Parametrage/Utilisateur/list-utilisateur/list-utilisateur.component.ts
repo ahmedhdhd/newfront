@@ -26,7 +26,7 @@ export class ListUtilisateurComponent {
   }
 
   getUsers() {
-    this.userService.getutilisateurs().subscribe({
+    this.userService.getall().subscribe({
       next: (response) => {
         this.users = response;
         this.onSearchChanges();
@@ -58,7 +58,7 @@ export class ListUtilisateurComponent {
   }
 
   deleteUser(id: number) {
-    this.userService.deleteuser(id).subscribe({
+    this.userService.delete(id).subscribe({
       next: () => {
         this.getUsers(); 
       },

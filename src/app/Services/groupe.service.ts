@@ -16,18 +16,18 @@ export class GroupeService {
     return this.http.get(`${this.baseUrl}/Groupe/${id}`);
   }
 
-  addGroup(groupe: Groupe): Observable<Groupe> {
+  add(groupe: Groupe): Observable<Groupe> {
     return this.http.post<Groupe>(`${this.baseUrl}/Groupe`, groupe);
   }
 
-  updateGroup(id: number, groupData: Groupe): Observable<Groupe> {
+  update(id: number, groupData: Groupe): Observable<Groupe> {
     return this.http.put<Groupe>(`${this.baseUrl}/Groupe/${id}`, groupData);
   }
 
-  deleteGroup(id: number): Observable<any> {
+  delete(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/Groupe/${id}`);
   }
-  getGroups(): Observable<any[]> {
+  getall(): Observable<any[]> {
     return this.http.get<any[]>(this.baseUrl+'/Groupe');
   }
 }

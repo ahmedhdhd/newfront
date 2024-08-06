@@ -57,7 +57,7 @@ export class AddEditProduitComponent implements OnInit {
       this.idn = params['id'];
       if (this.idn) {
         this.isEdit = true;
-        this.productService.getProduct(this.idn).subscribe({
+        this.productService.get(this.idn).subscribe({
           next: (product) => {
             this.productForm.patchValue(product);
             this.filterFamilles(product.groupId);
@@ -77,14 +77,14 @@ export class AddEditProduitComponent implements OnInit {
   }
 
   getGroups() {
-    this.GroupeService.getGroups().subscribe({
+    this.GroupeService.getall().subscribe({
       next: response => this.groups = [...response],
       error: error => console.log(error)
     });
   }
 
   getFamilles() {
-    this.FamilleService.getFamilles().subscribe({
+    this.FamilleService.getall().subscribe({
       next: response => {
         this.familles = [...response];
         this.filteredFamilles = [...response];
@@ -94,7 +94,7 @@ export class AddEditProduitComponent implements OnInit {
   }
 
   getTypes() {
-    this.TypeService.getTypes().subscribe({
+    this.TypeService.getall().subscribe({
       next: response => {
         this.types = [...response];
         this.filteredTypes = [...response];
@@ -139,12 +139,12 @@ export class AddEditProduitComponent implements OnInit {
       }
   
       if (this.isEdit) {
-        this.productService.updateProduct(this.idn, formData).subscribe({
+        this.productService.update(this.idn, formData).subscribe({
           next: () => this.router.navigate(['/Admin/Produit']),
           error: (err) => console.error('Error updating product:', err)
         });
       } else {
-        this.productService.addProduct(formData).subscribe({
+        this.productService.add(formData).subscribe({
           next: () => this.router.navigate(['/Admin/Produit']),
           error: (err) => console.error('Error adding product:', err)
         });

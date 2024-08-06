@@ -53,7 +53,7 @@ export class PorduitService {
       })
     );
   }
-  getallproduct(promo: boolean): Observable<any[]> {
+  getall(promo: boolean): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/Produit/all?promo=${promo}`);
 }
   setShopParams(params: ShopParams) {
@@ -64,7 +64,7 @@ export class PorduitService {
     return this.shopParams;
   }
 
-  getProduct(id: number): Observable<Product> {
+  get(id: number): Observable<Product> {
     const product = [...this.productCache.values()]
       .reduce((acc, paginatedResult) => {
         return {...acc, ...paginatedResult.data.find(x => x.id === id)}
@@ -76,14 +76,14 @@ export class PorduitService {
   }
   
  
-  addProduct(formData: FormData): Observable<Product> {
+  add(formData: FormData): Observable<Product> {
     return this.http.post<Product>(`${this.baseUrl}/Produit`, formData);
   }
 
-  updateProduct(id: number, formData: FormData): Observable<Product> {
+  update(id: number, formData: FormData): Observable<Product> {
     return this.http.put<Product>(`${this.baseUrl}/Produit/${id}`, formData);
   }
-  deleteproduct(id : number){
+  delete(id : number){
     return this.http.delete(`${this.baseUrl}/Produit/${id}`)
   }
 

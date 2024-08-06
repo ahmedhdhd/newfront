@@ -23,7 +23,7 @@ export class ListGroupeComponent implements OnInit {
   }
 
   loadGroups(): void {
-    this.groupService.getGroups().subscribe(
+    this.groupService.getall().subscribe(
       groups => {
         this.groups = groups;
         this.filteredGroups = groups;
@@ -42,7 +42,7 @@ export class ListGroupeComponent implements OnInit {
 
   deleteGroup(id: number): void {
     
-      this.groupService.deleteGroup(id).subscribe(
+      this.groupService.delete(id).subscribe(
         () => this.filteredGroups = this.filteredGroups.filter(group => group.id !== id),
         error => console.error('Error deleting group', error)
       );

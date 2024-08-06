@@ -15,17 +15,17 @@ export class TypeService {
   getTypeById(id: any): Observable<any> {
     return this.http.get(`${this.baseUrl}/Types/${id}`);
   }
-  getTypes(): Observable<any[]> {
+  getall(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/Types`);
   }
-  addType(type: Type): Observable<Type> {
+  add(type: Type): Observable<Type> {
     return this.http.post<Type>(`${this.baseUrl}/Types`, type);
   }
 
-  updateType(id: number, typeData: Type): Observable<Type> {
+  update(id: number, typeData: Type): Observable<Type> {
     return this.http.put<Type>(`${this.baseUrl}/Types/${id}`, typeData);
   } 
-  deleteType(id: number) {
+  delete(id: number) {
     return this.http.delete(`${this.baseUrl}/Types/${id}`);
   }
   

@@ -23,7 +23,7 @@ export class ListProduitComponent implements OnInit {
 this.getProducts()  }
 
   getProducts() {
-    this.PorduitService.getallproduct(false).subscribe({
+    this.PorduitService.getall(false).subscribe({
       next: response => {
         this.products = response;
         this.onSearchChange();
@@ -61,7 +61,7 @@ this.getProducts()  }
 
 
   deleteProduct(id : number){
-this.PorduitService.deleteproduct(id).subscribe({
+this.PorduitService.delete(id).subscribe({
   next :() => { this.ngOnInit() } ,
 
   error: error => console.log(error)

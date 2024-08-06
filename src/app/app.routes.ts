@@ -10,11 +10,16 @@ import { AddEditUtilisateurComponent } from './Admin/Parametrage/Utilisateur/add
 import { AddEditFamilleComponent } from './Admin/Parametrage/Famille/add-edit-famille/add-edit-famille.component';
 import { AddEditTypeComponent } from './Admin/Parametrage/Type/add-edit-type/add-edit-type.component';
 import { AddEditGroupeComponent } from './Admin/Parametrage/Groupe/add-edit-groupe/add-edit-groupe.component';
+import { UserLoginComponent } from './Admin/Login/user-login/user-login.component';
+import { AcceuilComponent } from './Commercial/Acceuil/acceuil/acceuil.component';
 
 export const routes: Routes = [
+  {path : '' , component : AcceuilComponent},
  { path: 'Admin',
     component:  DashbordComponent,
-    children: [
+    children: [    
+        {path : "login" , component : UserLoginComponent},
+
         {
             path: 'Produit',
             component: ListProduitComponent

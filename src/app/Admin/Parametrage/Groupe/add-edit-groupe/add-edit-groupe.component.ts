@@ -52,12 +52,12 @@ export class AddEditGroupeComponent implements OnInit {
     if (this.groupForm.valid) {
       const groupData = this.groupForm.value;
       if (this.isEdit && this.id) {
-        this.groupService.updateGroup(this.id, groupData).subscribe(
+        this.groupService.update(this.id, groupData).subscribe(
           () => this.router.navigate(['/Admin/Groupe']),
           error => console.error('Error updating group', error)
         );
       } else {
-        this.groupService.addGroup(groupData).subscribe(
+        this.groupService.add(groupData).subscribe(
           () => this.router.navigate(['/Admin/Groupe']),
           error => console.error('Error adding group', error)
         );

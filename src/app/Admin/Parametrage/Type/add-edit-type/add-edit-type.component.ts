@@ -57,7 +57,7 @@ export class AddEditTypeComponent implements OnInit {
   }
 
   loadFamilles(): void {
-    this.FamilleService.getFamilles().subscribe(familles => {
+    this.FamilleService.getall().subscribe(familles => {
       this.familles = familles;
     });
   }
@@ -66,12 +66,12 @@ export class AddEditTypeComponent implements OnInit {
     if (this.typeForm.valid) {
       const typeData = this.typeForm.value;
       if (this.isEdit && this.id) {
-        this.typeService.updateType(this.id, typeData).subscribe(
+        this.typeService.update(this.id, typeData).subscribe(
           () => this.router.navigate(['/Admin/Type']),
           error => console.error('Error updating type', error)
         );
       } else {
-        this.typeService.addType(typeData).subscribe(
+        this.typeService.add(typeData).subscribe(
           () => this.router.navigate(['/Admin/Type']),
           error => console.error('Error adding type', error)
         );

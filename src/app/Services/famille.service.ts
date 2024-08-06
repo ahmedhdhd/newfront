@@ -12,7 +12,7 @@ export class FamilleService {
   baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient ) { }
-  getFamilles(): Observable<any[]> {
+  getall(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/Famille`);
   }
 
@@ -20,16 +20,16 @@ export class FamilleService {
     return this.http.get(`${this.baseUrl}/Famille/${id}`);
   }
 
-  addFamille(Famille: any): Observable<any> {
+  add(Famille: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/Famille`, Famille);
   }
 
 
-  updateFamille(id: number, Famille: any): Observable<any> {
+  update(id: number, Famille: any): Observable<any> {
     return this.http.put<any>(`${this.baseUrl}/Famille/${id}`, Famille);
   }
 
-  deleteFamille(id: number) {
+  delete(id: number) {
     return this.http.delete(`${this.baseUrl}/Famille/${id}`);
   }
 

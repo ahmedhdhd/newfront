@@ -10,7 +10,7 @@
         <div class="form-group">
             <label for="groupSelect">Group</label>
             <select id="groupSelect" formControlName="groupID" class="form-control">
-              <option *ngFor="let group of groups" [value]="group.id" [selected]="group.id === groupID">{{ group.name }}</option>
+              <option *ngFor="let group of groups" [value]="group.id" [selected]="group.id ===groupID" >{{ group.name }}</option>
             </select>
           </div>
           

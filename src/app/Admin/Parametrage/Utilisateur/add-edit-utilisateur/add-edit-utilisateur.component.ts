@@ -56,14 +56,12 @@ onSubmit(): void {
   if (this.userForm.valid) {
     const userData = this.userForm.value;
     if (this.isEdit && this.id) {
-      // Update existing type
-      this.userService.updateUser(this.id, userData).subscribe(
+      this.userService.update(this.id, userData).subscribe(
         () => this.router.navigate(['/Admin/User']),
         error => console.error('Error updating user', error)
       );
     } else {
-      // Add new type
-      this.userService.addUser(userData).subscribe(
+      this.userService.add(userData).subscribe(
         () => this.router.navigate(['/Admin/User']),
         error => console.error('Error adding user', error)
       );
